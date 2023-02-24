@@ -1,0 +1,45 @@
+{% extends "user/home_layout.html"%}
+
+{% block content %}
+<div class="content" style="background-color: white;padding:3em">
+ <!-- {{ data }}
+ {{ uid }} -->
+ <!-- {{ data }}
+ {{data2}} 
+ {{filtered}}-->
+ <!-- {{data3}} -->
+ {{data}}
+ <br>
+ {{data.users}}
+
+
+ <table class="table table-striped">
+    <tr>
+        <th>serial</th>
+        <th>Party Name</th>
+        <th>Total members</th>
+    </tr>
+    <tbody>
+        <tr>
+            <td>{{1}}</td>
+            <td>  {{data.party_name}} </td>
+            <td> {{data.users|count}}</td>
+        </tr>
+    </tbody>
+ </table>
+{{data1}}
+
+{{data1.party_deets.party_name}}
+
+
+
+{#{% for username,partyname,contact,shortcode in data%}<!-- you can also say for d,x in data -->
+ <p>The fullname is :{{username}}and the party is:{{partyname}}</p>
+ {%endfor%}#}
+
+{#{% for d in data%}<!-- you can also say for d,x in data -->
+ <p>The fullname is :{{d[0].user_fullname}}and the party is:{{d[1].party_name}}</p>
+ {%endfor%}#}
+ </div>
+
+{% endblock %}

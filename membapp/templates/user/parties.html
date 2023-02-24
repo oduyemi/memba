@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href=" {{url_for('static',filename='bootstrap/css/bootstrap.css')}} ">
+	<link rel="stylesheet" type="text/css" href=" {{url_for('static',filename='fontawesome/css/all.min.css')}} ">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/admin.css')}} ">
+    <title>All Parties </title>
+</head>
+<body>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>PARTY</th>
+                    <th>CODE</th>
+                    <th>CONTACT</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for a in p %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{a.party_name}}</td>
+                    <td>{{a.party_shortcode}}</td>
+                    <td><a href="#">Edit</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

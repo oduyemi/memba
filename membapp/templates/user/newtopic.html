@@ -1,0 +1,12 @@
+{% extends "user/home_layout.html"%}
+{%block content%}
+<div class="col-5" style="background-color: white; padding:3em">
+    <form action="" method="POST">
+        <textarea name="content" class="form-control" rows="4" placeholder="Type Topic Here"></textarea>
+
+        <div class="text-end mt-3">
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

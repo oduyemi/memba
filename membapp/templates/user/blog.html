@@ -1,0 +1,56 @@
+{% extends "user/home_layout.html"%}
+{%block content%}
+   <div class="content" style="background-color: white;padding:3px;">
+
+
+    <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mt-3 mb-4 fst-italic border-bottom">
+        Latest Blog Post
+      </h3>
+      {% with messages=get_flashed_messages()%}
+      {%if messages %}
+      {% for m in messages %}
+        <div class="alert alert-info">{{m}}</div>
+        {% endfor %}
+        {% endif %}
+      {%endwith%}
+
+      {% if articles == []%}
+      <div class="alert alert-info">No article has been published yet</div>
+      {% else %}
+      {% for x in articles %}
+
+      <article class="blog-post ms-5">
+        <p class="blog-post-title">{{x.userdeets.user_fullname}}</p>
+        <p class="blog-post-meta">{{x.topic_date}}</p>
+        <p>{{x.topic_title[0:100]}}... <a href="/blog/{{x.topic_id}}/">read more</a> </p>
+        <hr>
+      </article>
+      {% endfor %}
+      {% endif %}
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+
+        <div class="p-4">
+        {% if session.get('user') !=None%}
+          <a href="/newtopic" class="btn btn-warning">Post new Topic</a>
+        {% endif %}
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">Performing Artistes</a></li>
+            <li><a href="#">Partner Hotels</a></li>
+            <li><a href="#">Event Managers</a></li>
+            <li><a href="#">Bids for Contracts</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+{% endblock %}

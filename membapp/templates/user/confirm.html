@@ -1,0 +1,20 @@
+{% extends "user/home_layout.html"%}
+  
+{% block content %}
+<div class="content" style="background-color: white;padding:3em">
+  <h3>Donation Confirmation page</h3>
+  {{ username }}
+  <p>Thank you for choosing to donate with Memba app.</p>
+  <p>Please confirm your donation details as follows</p>
+  <div>
+    <p>Reference Number: {{refno}}</p>
+    <p>Name:{{donor.don_donor}}</p>
+    < 
+    {{p}}
+
+    <form method="post" action="/confirm">
+        <input type="hidden" name="csrf_token"
+  </div>
+ </div>
+ 
+{% endblock %}
